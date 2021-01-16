@@ -1,0 +1,13 @@
+C:\GitHub\dedicated-server\GameSever\bin\Debug\netcoreapp3.1\GameSever.exe
+C:\GitHub\dedicated-server\GameSever\bin\Debug\netcoreapp3.1\GameSever.deps.json
+C:\GitHub\dedicated-server\GameSever\bin\Debug\netcoreapp3.1\GameSever.runtimeconfig.json
+C:\GitHub\dedicated-server\GameSever\bin\Debug\netcoreapp3.1\GameSever.runtimeconfig.dev.json
+C:\GitHub\dedicated-server\GameSever\bin\Debug\netcoreapp3.1\GameSever.dll
+C:\GitHub\dedicated-server\GameSever\bin\Debug\netcoreapp3.1\GameSever.pdb
+C:\GitHub\dedicated-server\GameSever\obj\Debug\netcoreapp3.1\GameSever.csprojAssemblyReference.cache
+C:\GitHub\dedicated-server\GameSever\obj\Debug\netcoreapp3.1\GameSever.AssemblyInfoInputs.cache
+C:\GitHub\dedicated-server\GameSever\obj\Debug\netcoreapp3.1\GameSever.AssemblyInfo.cs
+C:\GitHub\dedicated-server\GameSever\obj\Debug\netcoreapp3.1\GameSever.csproj.CoreCompileInputs.cache
+C:\GitHub\dedicated-server\GameSever\obj\Debug\netcoreapp3.1\GameSever.dll
+C:\GitHub\dedicated-server\GameSever\obj\Debug\netcoreapp3.1\GameSever.pdb
+C:\GitHub\dedicated-server\GameSever\obj\Debug\netcoreapp3.1\GameSever.genruntimeconfig.cache
