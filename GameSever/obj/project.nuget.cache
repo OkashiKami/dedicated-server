@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xy1TwZLKzdmdUNgnMva5r1VkJlx+d6A+hDDg35wZ6OWWP/ZQ3wgU/DQOoWWFSanaDAHbOETI1bXJAg8rA/y+XA==",
+  "dgSpecHash": "Hzrz7xVdH7gCBLTKkpWWnuXv9xAU0Y4l0UChzE4qBeB61eLk4f3J1gXIPz7xfW/5YCUk4G2TGtMc/q4UFg1qVQ==",
   "success": true,
-  "projectFilePath": "C:\\GitHub\\dedicated-server\\GameSever\\GameSever.csproj",
+  "projectFilePath": "C:\\GitHub\\dedicated-server\\GameSever\\GameServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

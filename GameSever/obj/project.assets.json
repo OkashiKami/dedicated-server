@@ -15,9 +15,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\dedicated-server\\GameSever\\GameSever.csproj",
-      "projectName": "GameSever",
-      "projectPath": "C:\\GitHub\\dedicated-server\\GameSever\\GameSever.csproj",
+      "projectUniqueName": "C:\\GitHub\\dedicated-server\\GameSever\\GameServer.csproj",
+      "projectName": "GameServer",
+      "projectPath": "C:\\GitHub\\dedicated-server\\GameSever\\GameServer.csproj",
       "packagesPath": "C:\\Users\\neele\\.nuget\\packages\\",
       "outputPath": "C:\\GitHub\\dedicated-server\\GameSever\\obj\\",
       "projectStyle": "PackageReference",
