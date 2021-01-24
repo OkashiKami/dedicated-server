@@ -20,5 +20,11 @@ namespace GameServer
 
 			// TODO: send client into game
 		}
+
+		public static void UDPTestReceived(int _fromClient, Packet _packet)
+		{
+			string _msg = _packet.ReadString();
+			Console.WriteLine($"Reading packet via UDP. Contains message: {_msg}");
+		}
 	}
 }
