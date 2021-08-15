@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Hzrz7xVdH7gCBLTKkpWWnuXv9xAU0Y4l0UChzE4qBeB61eLk4f3J1gXIPz7xfW/5YCUk4G2TGtMc/q4UFg1qVQ==",
+  "dgSpecHash": "2YXKc/iq58UdddEzVhVgKzAZVd77DfeUW5GG78s2MWRyFNwWZguztYIyJBq+yCHLKznnWmsvj5HEzT+ixhLU3g==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\dedicated-server\\GameSever\\GameServer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\neele\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
   "logs": []
 }
