@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2YXKc/iq58UdddEzVhVgKzAZVd77DfeUW5GG78s2MWRyFNwWZguztYIyJBq+yCHLKznnWmsvj5HEzT+ixhLU3g==",
+  "dgSpecHash": "Axa9oavxrnodU9V2LdGwOrFRlBGkiSN565I7+CETPLdfS7rVkMTeOBs2eDbFgcho26t7rzmyePehO0OGmJtcwg==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\dedicated-server\\GameSever\\GameServer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\neele\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\neele\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
   ],
   "logs": []

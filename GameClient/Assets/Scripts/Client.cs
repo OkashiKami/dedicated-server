@@ -49,7 +49,7 @@ public class Client : MonoBehaviour
 		packetHandlers = new Dictionary<int, PacketHandler>()
 		{
 			{(int)ServerPackets.welcome, ClientHandle.Welcome},
-			{(int)ServerPackets.udpTest, ClientHandle.UDPTest}
+			{(int)ServerPackets.spawnPlayer, ClientHandle.SpawnPlayer},
 		};
 		Debug.Log("Initialized packets.");
 	}
