@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded2f913aa1b1ca49bffb935483e6f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  username: 
 --- !u!114 &5329191142766457205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174898f2af584964783759ade3afbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 8081986904018910498}
+  sensitivity: 100
+  clampAngle: 85
 --- !u!1 &4008955433852989368
 GameObject:
   m_ObjectHideFlags: 0
