@@ -16,6 +16,7 @@ public class Client : MonoBehaviour
 	public TCP tcp;
 	public UDP udp;
 
+	private bool isConnected;
 	private delegate void PacketHandler(Packet _packet);
 	private static Dictionary<int, PacketHandler> packetHandlers;
 
@@ -38,9 +39,16 @@ public class Client : MonoBehaviour
 		udp = new UDP();
 	}
 
+	private void OnApplicationQuit()
+	{
+		Disconnect();
+	}
+
 	public void ConnectToServer()
 	{
 		InitializeClientData();
+
+		isConnected = true;
 		tcp.Connect();
 	}
 
@@ -54,6 +62,18 @@ public class Client : MonoBehaviour
 			{(int)ServerPackets.playerRotation, ClientHandle.PlayerRotation},
 		};
 		Debug.Log("Initialized packets.");
+	}
+
+	private void Disconnect()
+	{
+		if (isConnected)
+		{
+			isConnected = false;
+			tcp.socket.Close();
+			udp.socket.Close();
+
+			Debug.Log("Disconnected from server.");
+		}
 	}
 
 	// START OF TCP CLASS
@@ -110,7 +130,7 @@ public class Client : MonoBehaviour
 				int _byteLength = stream.EndRead(_result);
 				if (_byteLength <= 0)
 				{
-					// TODO: DISCONNECT
+					instance.Disconnect();
 					return;
 				}
 
@@ -124,7 +144,7 @@ public class Client : MonoBehaviour
 			catch (Exception _ex)
 			{
 				Console.WriteLine($"Error receiving TCP data: {_ex}");
-				// TODO: DISCONNECT
+				Disconnect();
 
 			}
 		}
@@ -169,6 +189,15 @@ public class Client : MonoBehaviour
 
 			if (_packetLength <= 1) return true;
 			else return false;
+		}
+
+		private void Disconnect()
+		{
+			instance.Disconnect();
+			stream = null;
+			receivedData = null;
+			receiveBuffer = null;
+			socket = null;
 		}
 	}
 	// END OF TCP CLASS
@@ -226,7 +255,7 @@ public class Client : MonoBehaviour
 
 				if (_data.Length < 4)
 				{
-					// TODO: Disconnect
+					instance.Disconnect();
 					return;
 				}
 
@@ -234,7 +263,7 @@ public class Client : MonoBehaviour
 			}
 			catch
 			{
-				// TODO: Disconnect
+				Disconnect();
 			}
 		}
 
@@ -256,6 +285,13 @@ public class Client : MonoBehaviour
 					packetHandlers[_packetId](_packet);
 				}
 			});
+		}
+
+		private void Disconnect()
+		{
+			instance.Disconnect();
+			endPoint = null;
+			socket = null;
 		}
 
 	}
