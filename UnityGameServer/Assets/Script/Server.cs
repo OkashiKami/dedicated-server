@@ -120,5 +120,9 @@ public class Server
 		Console.Write("Initializes packets");
 	}
 
-
+	public static void Stop()
+	{
+		tcpListener.Stop();
+		udpListener.Close();
+	}
 }

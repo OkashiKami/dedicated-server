@@ -29,11 +29,12 @@ public class NetworkManager : MonoBehaviour
 		QualitySettings.vSyncCount = 0;
 		Application.targetFrameRate = targetFrameRate;
 
-#if UNITY_EDITOR
-		Debug.Log("BUILD THE PROJECT TO START THE SERVER!");
-#else
 		Server.Start(maxPlayers, port);
-#endif
+	}
+
+	private void OnApplicationQuit()
+	{
+		Server.Stop();
 	}
 
 	public Player InstantiatePlayer()
