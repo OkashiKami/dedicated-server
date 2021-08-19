@@ -41,7 +41,7 @@ namespace GameServer
 		{
 			TcpClient _client = tcpListener.EndAcceptTcpClient(_result);
 			tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectCallback), null);
-			Console.WriteLine($"Incoming connected from {_client.Client.RemoteEndPoint}...");
+			Console.WriteLine($"Incoming connection from {_client.Client.RemoteEndPoint}...");
 
 			for (int i = 1; i <= MaxPlayers; i++)
 			{
@@ -109,6 +109,8 @@ namespace GameServer
 
 		private static void InitializeServerData()
 		{
+			Console.WriteLine("Initializing packets..");
+
 			for (int i = 1; i <= MaxPlayers; i++)
 			{
 				clients.Add(i, new Client(i));
@@ -119,7 +121,6 @@ namespace GameServer
 				{(int)ClientPackets.welcomeReceived, ServerHandle.WelcomeReceived },
 				{(int)ClientPackets.playerMovement, ServerHandle.PlayerMovement }
 			};
-			Console.Write("Initializes packets");
 		}
 
 
