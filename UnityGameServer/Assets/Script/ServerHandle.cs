@@ -31,4 +31,11 @@ public class ServerHandle
 
 		Server.clients[_fromtClient].player.SetInput(_inputs, _rotation);
 	}
+
+	public static void PlayerShoot(int _fromClient, Packet _packet)
+	{
+		Vector3 _shootDirection = _packet.ReadVector3();
+
+		Server.clients[_fromClient].player.Shoot(_shootDirection);
+	}
 }
