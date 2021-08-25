@@ -13,13 +13,15 @@ public class Player : MonoBehaviour
 	public float jumpSpeed = 5f;
 	public float health;
 	public float maxHealth = 100f;
+	public int itemAmount = 0;
+	public int maxItemAmount = 3;
 
 	private bool[] inputs;
 	private float yVelocity = 0;
 
 	private void Start()
 	{
-		gravity *= Time.deltaTime * Time.deltaTime;
+		gravity *= Time.fixedDeltaTime * Time.fixedDeltaTime;
 		moveSpeed *= Time.fixedDeltaTime;
 		jumpSpeed *= Time.fixedDeltaTime;
 	}
@@ -36,7 +38,10 @@ public class Player : MonoBehaviour
 	/// <summary>Processes player input and moves the player.</summary>
 	public void FixedUpdate()
 	{
-		if (health <= 0f) return;
+		if (health <= 0f)
+		{
+			return;
+		}
 
 		Vector2 _inputDirection = Vector2.zero;
 		if (inputs[0])
@@ -64,24 +69,19 @@ public class Player : MonoBehaviour
 	private void Move(Vector2 _inputDirection)
 	{
 		Vector3 _moveDirection = transform.right * _inputDirection.x + transform.forward * _inputDirection.y;
-
-		// turn it into a movement vector with speed.
 		_moveDirection *= moveSpeed;
 
-		// handle if it's grounded
 		if (controller.isGrounded)
 		{
-			yVelocity = 0;
-
-			//are they pressing space?
-			if (inputs[4]) yVelocity = jumpSpeed;
+			yVelocity = 0f;
+			if (inputs[4])
+			{
+				yVelocity = jumpSpeed;
+			}
 		}
 		yVelocity += gravity;
 
-		// overwrite the y velocity of the vector
 		_moveDirection.y = yVelocity;
-
-		// give it to the character controller
 		controller.Move(_moveDirection);
 
 		ServerSend.PlayerPosition(this);
@@ -137,5 +137,14 @@ public class Player : MonoBehaviour
 		ServerSend.PlayerRespawned(this);
 	}
 
+	public bool AttemptPickupItem()
+	{
+		if (itemAmount >= maxItemAmount)
+		{
+			return false;
+		}
 
+		itemAmount++;
+		return true;
+	}
 }

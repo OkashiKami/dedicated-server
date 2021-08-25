@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -12,7 +13,10 @@ public enum ServerPackets
 	playerRotation,
 	playerDisconnected,
 	playerHealth,
-	playerRespawned
+	playerRespawned,
+	createItemSpawner,
+	itemSpawned,
+	itemPickedUp
 }
 
 /// <summary>Sent from client to server.</summary>
@@ -32,7 +36,7 @@ public class Packet : IDisposable
 	/// <summary>Creates a new empty packet (without an ID).</summary>
 	public Packet()
 	{
-		buffer = new List<byte>(); // Intitialize buffer
+		buffer = new List<byte>(); // Initialize buffer
 		readPos = 0; // Set readPos to 0
 	}
 
@@ -40,7 +44,7 @@ public class Packet : IDisposable
 	/// <param name="_id">The packet ID.</param>
 	public Packet(int _id)
 	{
-		buffer = new List<byte>(); // Intitialize buffer
+		buffer = new List<byte>(); // Initialize buffer
 		readPos = 0; // Set readPos to 0
 
 		Write(_id); // Write packet id to the buffer
@@ -50,7 +54,7 @@ public class Packet : IDisposable
 	/// <param name="_data">The bytes to add to the packet.</param>
 	public Packet(byte[] _data)
 	{
-		buffer = new List<byte>(); // Intitialize buffer
+		buffer = new List<byte>(); // Initialize buffer
 		readPos = 0; // Set readPos to 0
 
 		SetBytes(_data);
@@ -164,7 +168,6 @@ public class Packet : IDisposable
 		Write(_value.Length); // Add the length of the string to the packet
 		buffer.AddRange(Encoding.ASCII.GetBytes(_value)); // Add the string itself
 	}
-
 	/// <summary>Adds a Vector3 to the packet.</summary>
 	/// <param name="_value">The Vector3 to add.</param>
 	public void Write(Vector3 _value)
@@ -173,7 +176,6 @@ public class Packet : IDisposable
 		Write(_value.y);
 		Write(_value.z);
 	}
-
 	/// <summary>Adds a Quaternion to the packet.</summary>
 	/// <param name="_value">The Quaternion to add.</param>
 	public void Write(Quaternion _value)

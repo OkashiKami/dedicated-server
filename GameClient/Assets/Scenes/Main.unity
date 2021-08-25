@@ -109143,7 +109143,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14748
+  m_Name: pb_Mesh14752
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -109332,6 +109332,8 @@ MonoBehaviour:
   localPlayerPrefab: {fileID: 174534884391030046, guid: c42719329af733c4d991e64c64cdb398,
     type: 3}
   playerPrefab: {fileID: 174534884391030046, guid: 39cca20967a7a0a42bb64e878a800240,
+    type: 3}
+  itemSpawnerPrefab: {fileID: 3351190961189370643, guid: 7ac9ad5aea2e09c458c18acc05499efd,
     type: 3}
 --- !u!4 &1135619685
 Transform:
